@@ -32,7 +32,7 @@ export const PROJECTS = [
     image: project2,
     description: "Basic Pacman game created using HTML, CSS, and JavaScript",
     technologies: ["HTML", "CSS", "JS"],
-    liveDemo: "https://example.com/pacman-demo",
+    liveDemo: "https://pacmanbasic.netlify.app/",
     github: "https://github.com/Harry-Hunter23/Pacman",
   },
   {
