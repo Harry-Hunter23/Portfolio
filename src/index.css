@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-roboto: "Roboto", sans-serif;
+}
+
+body {
+  font-family: var(--font-roboto);
+}
+.aspect-w-1 {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-h-1 {
+  aspect-ratio: 1 / 1;
+}
+
+.object-cover {
+  object-fit: cover;
+}
