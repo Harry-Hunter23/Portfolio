@@ -1,6 +1,6 @@
 import React from "react";
 import { HERO_CONTENT } from "../constants";
-import cover from "../assets/cover.jpeg";
+import profile from "../assets/profile_coverwide.jpeg";
 import { motion } from "framer-motion";
 
 const Hero = () => {
@@ -42,13 +42,14 @@ const Hero = () => {
         </motion.p>
       </div>
       <div className="group w-full lg:w-1/2 p-4 lg:p-8 flex justify-center lg:justify-end">
-        <div className="w-[250px] lg:w-[300px] rounded-[15px] group-hover:scale-105 duration-300">
+        <div className="w-[250px] lg:w-[300px] mt-[40px] rounded-[15px] group-hover:scale-105 duration-300">
           <motion.img
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 1.2 }}
             className="rounded-[25px] w-full"
-            src={cover}
+            src={profile}
+            alt="Profile Cover"
           />
         </div>
       </div>
