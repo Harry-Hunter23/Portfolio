@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { SiPostman, SiOpenai } from "react-icons/si";
 import { DiVisualstudio } from "react-icons/di";
 import { FaGithub, FaSlack } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const Tools = () => {
+  const [hoveredTool, setHoveredTool] = useState(null);
+
   const iconVariants = (duration) => ({
     initial: { y: -10 },
     animate: {
@@ -17,6 +19,20 @@ const Tools = () => {
       },
     },
   });
+
+  const tools = [
+    {
+      name: "Visual Studio",
+      icon: <DiVisualstudio className="text-7xl text-blue-900" />,
+    },
+    {
+      name: "Postman",
+      icon: <SiPostman className="text-7xl text-orange-700" />,
+    },
+    { name: "GitHub", icon: <FaGithub className="text-7xl text-white" /> },
+    { name: "OpenAI", icon: <SiOpenai className="text-7xl text-white" /> },
+    { name: "Slack", icon: <FaSlack className="text-7xl text-purple-800" /> },
+  ];
 
   return (
     <div className="border-b border-neutral-800 pb-24">
@@ -34,46 +50,29 @@ const Tools = () => {
         transition={{ duration: 1.5 }}
         className="flex flex-wrap items-center justify-center gap-4"
       >
-        <motion.div
-          variants={iconVariants(2.0)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <DiVisualstudio className="text-7xl text-blue-900" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiPostman className="text-7xl text-orange-700" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(3.0)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <FaGithub className="text-7xl text-white" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(3.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiOpenai className="text-7xl text-white" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(4.0)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <FaSlack className="text-7xl text-purple-800" />
-        </motion.div>
+        {tools.map((tool, index) => (
+          <motion.div
+            key={index}
+            variants={iconVariants(2.0 + index * 0.5)}
+            initial="initial"
+            animate="animate"
+            className="relative rounded-2xl border-4 border-neutral-800 p-4"
+            onMouseEnter={() => setHoveredTool(tool.name)}
+            onMouseLeave={() => setHoveredTool(null)}
+          >
+            {tool.icon}
+            {hoveredTool === tool.name && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className="absolute top-full mt-2 w-full text-center text-white"
+              >
+                {tool.name}
+              </motion.div>
+            )}
+          </motion.div>
+        ))}
       </motion.div>
     </div>
   );
