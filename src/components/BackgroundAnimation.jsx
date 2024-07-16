@@ -1,49 +1,32 @@
 import React, { useRef, useEffect } from "react";
 import p5 from "p5";
 
-const InterstellarConstellationAnimation = () => {
+const BackgroundAnimation = () => {
   const sketchRef = useRef();
 
   useEffect(() => {
     const sketch = (p) => {
-      let stars = [];
-      const numStars = 100;
+      let particles = [];
+      const numParticles = 100;
       const repelDistance = 100;
 
       p.setup = () => {
         p.createCanvas(window.innerWidth, window.innerHeight);
-        for (let i = 0; i < numStars; i++) {
-          stars.push(new Star(p));
+        for (let i = 0; i < numParticles; i++) {
+          particles.push(new Particle(p));
         }
       };
 
       p.draw = () => {
         p.background(0);
-        for (let i = 0; i < stars.length; i++) {
-          stars[i].update();
-          stars[i].edges();
-          stars[i].show();
-          for (let j = i + 1; j < stars.length; j++) {
-            const d = p.dist(
-              stars[i].pos.x,
-              stars[i].pos.y,
-              stars[j].pos.x,
-              stars[j].pos.y
-            );
-            if (d < 150) {
-              p.stroke(255, 150 - d);
-              p.line(
-                stars[i].pos.x,
-                stars[i].pos.y,
-                stars[j].pos.x,
-                stars[j].pos.y
-              );
-            }
-          }
-        }
+        particles.forEach((particle) => {
+          particle.update();
+          particle.edges();
+          particle.show();
+        });
       };
 
-      class Star {
+      class Particle {
         constructor(p) {
           this.p = p;
           this.pos = p.createVector(p.random(p.width), p.random(p.height));
@@ -115,4 +98,4 @@ const InterstellarConstellationAnimation = () => {
   );
 };
 
-export default InterstellarConstellationAnimation;
+export default BackgroundAnimation;
