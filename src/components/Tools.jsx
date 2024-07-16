@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { SiPostman, SiOpenai } from "react-icons/si";
 import { DiVisualstudio } from "react-icons/di";
 import { FaGithub, FaSlack } from "react-icons/fa";
+import { FaJira } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const Tools = () => {
@@ -32,6 +33,7 @@ const Tools = () => {
     { name: "GitHub", icon: <FaGithub className="text-7xl text-white" /> },
     { name: "OpenAI", icon: <SiOpenai className="text-7xl text-white" /> },
     { name: "Slack", icon: <FaSlack className="text-7xl text-purple-800" /> },
+    { name: "Jira", icon: <FaJira className="text-7xl text-blue-700" /> },
   ];
 
   return (
