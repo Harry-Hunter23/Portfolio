@@ -53,17 +53,21 @@ const BackgroundAnimation = () => {
           if (this.pos.x > this.p.width) {
             this.pos.x = this.p.width;
             this.vel.x *= -1;
+            this.vel.mult(0.9); // Slow down after hitting the edge
           } else if (this.pos.x < 0) {
             this.pos.x = 0;
             this.vel.x *= -1;
+            this.vel.mult(0.9); // Slow down after hitting the edge
           }
 
           if (this.pos.y > this.p.height) {
             this.pos.y = this.p.height;
             this.vel.y *= -1;
+            this.vel.mult(0.9); // Slow down after hitting the edge
           } else if (this.pos.y < 0) {
             this.pos.y = 0;
             this.vel.y *= -1;
+            this.vel.mult(0.9); // Slow down after hitting the edge
           }
         }
 
@@ -73,6 +77,10 @@ const BackgroundAnimation = () => {
           this.p.point(this.pos.x, this.pos.y);
         }
       }
+
+      p.windowResized = () => {
+        p.resizeCanvas(window.innerWidth, window.innerHeight);
+      };
     };
 
     const myP5 = new p5(sketch, sketchRef.current);
