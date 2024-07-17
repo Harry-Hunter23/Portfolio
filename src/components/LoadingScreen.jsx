@@ -31,18 +31,18 @@ const LoadingScreen = ({ onComplete }) => {
             return prevMessage;
           }
         });
-      }, 120); // Change message every 800 milliseconds after the first message
+      }, 220); // Change message every 800 milliseconds after the first message
 
       return () => clearInterval(interval);
-    }, 220); // First message stays for 200 milliseconds
+    }, 150); // First message stays for 200 milliseconds
 
     return () => clearTimeout(firstMessageTimeout);
   }, [onComplete]);
 
   return (
     <div className="flex items-center justify-center h-screen bg-gradient-to-r from-black via-gray-800 to-black">
-      <div className="p-8 rounded-lg">
-        <h1 className="text-4xl font-bold text-white">
+      <div className="p-8 rounded-lg text-center">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white">
           {messages[currentMessage]}
         </h1>
       </div>
