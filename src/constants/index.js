@@ -5,9 +5,7 @@ import project4 from "../assets/projects/bloggscrern.png";
 
 export const HERO_CONTENT = `I am a self-taught MERN stack developer passionate about learning new technologies and collaborating with teams. With expertise in MongoDB, Express.js, React, and Node.js, I build scalable web applications. I excel in user authentication, routing, and creating intuitive UIs. Committed to delivering high-quality web solutions, I stay updated with industry trends to ensure my work is always cutting-edge.`;
 
-export const ABOUT_TEXT = `I'm self-taught MERN stack developer with a Bachelor of Science degree in agriculture. Hailing from Wardha, Maharashtra, I have developed a passion for building user interfaces that are both functional and visually appealing. Over the course of my journey, I have successfully completed more than 10 full-stack projects, honing my skills in creating seamless and efficient web applications.
-
-In addition to my technical expertise, I am proficient in English, Hindi, and Marathi, which enables me to communicate effectively with a diverse range of people. My background in agriculture, combined with my dedication to technology, gives me a unique perspective and a versatile approach to problem-solving. I am always eager to learn and take on new challenges, striving to deliver the best solutions in every project I undertake..`;
+export const ABOUT_TEXT = `I am a MERN stack developer with a Bachelor of Science degree in agriculture, hailing from Wardha, Maharashtra. With a passion for building functional and visually appealing user interfaces, I have successfully completed over 10 full-stack projects. My skills in creating seamless and efficient web applications are complemented by my proficiency in English, Hindi, and Marathi, enabling effective communication with diverse audiences. Known as a team player, quick learner, and adaptable problem solver, I bring a unique perspective and versatile approach to every challenge. I am always eager to learn and deliver the best solutions in every project.`;
 
 export const PROJECTS = [
   {
