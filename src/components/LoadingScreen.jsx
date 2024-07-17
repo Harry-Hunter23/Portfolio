@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const messages = [
-  "say hello to Shrihari👋",
+  "Say hello to Shrihari👋",
   "Welcome",
   "स्वागत है",
   "સ્વાગત છે ",
