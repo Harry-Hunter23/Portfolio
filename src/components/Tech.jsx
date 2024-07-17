@@ -4,6 +4,9 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { SiExpress, SiMongodb, SiTailwindcss } from "react-icons/si";
 import { FaBootstrap } from "react-icons/fa6";
 import { RiNextjsLine } from "react-icons/ri";
+import { SiRedux } from "react-icons/si";
+import { SiMui } from "react-icons/si";
+
 import { motion } from "framer-motion";
 
 const PythonLogo = () => (
@@ -82,6 +85,12 @@ const Tech = () => {
       icon: <IoLogoJavascript className="text-7xl text-yellow-500" />,
     },
     { name: "React", icon: <FaReact className="text-7xl text-cyan-400" /> },
+    { name: "Redux", icon: <SiRedux className="text-7xl text-purple-800" /> },
+    {
+      name: "Material UI",
+      icon: <SiMui className="text-7xl text-blue-800" />,
+    },
+
     { name: "Next.js", icon: <RiNextjsLine className="text-7xl text-white" /> },
     { name: "Node.js", icon: <FaNodeJs className="text-7xl text-green-500" /> },
     { name: "Express", icon: <SiExpress className="text-7xl text-white" /> },

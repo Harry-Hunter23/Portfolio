@@ -4,6 +4,7 @@ import { DiVisualstudio } from "react-icons/di";
 import { FaGithub, FaSlack } from "react-icons/fa";
 import { FaJira } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { FaGitAlt } from "react-icons/fa";
 
 const Tools = () => {
   const [hoveredTool, setHoveredTool] = useState(null);
@@ -29,6 +30,10 @@ const Tools = () => {
     {
       name: "Postman",
       icon: <SiPostman className="text-7xl text-orange-700" />,
+    },
+    {
+      name: "Git",
+      icon: <FaGitAlt className="text-7xl text-orange-700" />,
     },
     { name: "GitHub", icon: <FaGithub className="text-7xl text-white" /> },
     { name: "OpenAI", icon: <SiOpenai className="text-7xl text-white" /> },
