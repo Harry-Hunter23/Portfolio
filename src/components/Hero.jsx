@@ -14,13 +14,13 @@ const Hero = () => {
   });
 
   return (
-    <div className="pb-4 lg:mb-35 flex flex-col lg:flex-row items-center lg:items-start gap-5">
-      <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+    <div className="pb-4 lg:mb-35 flex flex-col lg:flex-row items-center lg:items-start gap-5 lg:gap-10">
+      <div className="flex flex-col items-center lg:items-start text-center lg:text-left mx-4 sm:mx-6 lg:mx-0">
         <motion.h1
           variants={container(0)}
           initial="hidden"
           animate="visible"
-          className="text-4xl lg:text-6xl font-thin tracking-tight my-6 lg:my-[50px] p-6 text-white"
+          className="text-4xl sm:text-5xl lg:text-6xl font-thin tracking-tight my-6 lg:my-[50px] p-4 lg:p-6 text-white"
         >
           Shrihari Deshmukh
         </motion.h1>
@@ -28,7 +28,7 @@ const Hero = () => {
           variants={container(0.5)}
           initial="hidden"
           animate="visible"
-          className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-400 bg-clip-text tracking-tighter text-2xl lg:text-4xl text-transparent mx-6 lg:mx-[22px]"
+          className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-400 bg-clip-text tracking-tighter text-xl sm:text-2xl lg:text-4xl text-transparent mx-4 sm:mx-6 lg:mx-0"
         >
           MERN Stack Developer
         </motion.span>
@@ -36,18 +36,18 @@ const Hero = () => {
           variants={container(1)}
           initial="hidden"
           animate="visible"
-          className="max-w-xl mx-6 lg:mx-[22px] my-4 text-base lg:text-lg"
+          className="max-w-xl mx-4 sm:mx-6 lg:mx-0 my-4 text-sm sm:text-base lg:text-lg"
         >
           {HERO_CONTENT}
         </motion.p>
       </div>
       <div className="group w-full lg:w-1/2 p-4 lg:p-8 flex justify-center lg:justify-end">
-        <div className="w-[250px] lg:w-[300px] mt-[40px] rounded-[15px] group-hover:scale-105 duration-300">
+        <div className="w-[200px] sm:w-[250px] lg:w-[300px] mt-[20px] sm:mt-[30px] lg:mt-[40px] rounded-[15px] group-hover:scale-105 duration-300">
           <motion.img
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 1.2 }}
-            className="rounded-[25px] w-full"
+            className="rounded-[15px] sm:rounded-[20px] lg:rounded-[25px] w-full"
             src={profile}
             alt="Profile Cover"
           />
