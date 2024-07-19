@@ -29,8 +29,8 @@ const BackgroundAnimation = () => {
       class Particle {
         constructor(p) {
           this.p = p;
-          this.pos = p.createVector(p.random(p.width), p.random(p.height));
-          this.vel = p.createVector(p.random(-1, 1), p.random(-1, 1));
+          this.pos = p.createVector(p.width / 2, p.height); // Start at the bottom center
+          this.vel = p.createVector(p.random(-2, 2), p.random(-5, -2)); // Initial upward and outward velocity
           this.acc = p.createVector(0, 0);
         }
 
