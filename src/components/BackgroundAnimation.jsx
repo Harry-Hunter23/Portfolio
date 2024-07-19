@@ -7,7 +7,7 @@ const BackgroundAnimation = () => {
   useEffect(() => {
     const sketch = (p) => {
       let particles = [];
-      const numParticles = 75;
+      const numParticles = 100;
       const repelDistance = 120;
 
       p.setup = () => {
