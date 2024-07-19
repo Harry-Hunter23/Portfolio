@@ -6,7 +6,7 @@ import { FaBootstrap } from "react-icons/fa6";
 import { RiNextjsLine } from "react-icons/ri";
 import { SiRedux } from "react-icons/si";
 import { SiMui } from "react-icons/si";
-
+import { SiTypescript } from "react-icons/si";
 import { motion } from "framer-motion";
 
 const PythonLogo = () => (
@@ -78,11 +78,15 @@ const Tech = () => {
     },
     {
       name: "Bootstrap",
-      icon: <FaBootstrap className="text-7xl text-pink-700" />,
+      icon: <FaBootstrap className="text-7xl text-[#6f42c1]" />,
     },
     {
       name: "JavaScript",
       icon: <IoLogoJavascript className="text-7xl text-yellow-500" />,
+    },
+    {
+      name: "TypeScript",
+      icon: <SiTypescript className="text-[63px] text-blue-900" />,
     },
     { name: "React", icon: <FaReact className="text-7xl text-cyan-400" /> },
     { name: "Redux", icon: <SiRedux className="text-7xl text-purple-800" /> },
