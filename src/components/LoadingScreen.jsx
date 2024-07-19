@@ -31,10 +31,10 @@ const LoadingScreen = ({ onComplete }) => {
             return prevMessage;
           }
         });
-      }, 220); // Change message every 800 milliseconds after the first message
+      }, 200); // Change message every 800 milliseconds after the first message
 
       return () => clearInterval(interval);
-    }, 150); // First message stays for 200 milliseconds
+    }, 350); // First message stays for 200 milliseconds
 
     return () => clearTimeout(firstMessageTimeout);
   }, [onComplete]);
