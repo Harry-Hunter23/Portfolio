@@ -7,7 +7,7 @@ const Navbar = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = resumePath;
-    link.download = "Shrihari_Resume.pdf";
+    link.download = "ShrihariDeshmukh_resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
