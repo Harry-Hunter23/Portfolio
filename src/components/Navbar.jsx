@@ -1,6 +1,6 @@
 import React from "react";
 import { FaLinkedinIn, FaGithub, FaWhatsapp, FaTelegram } from "react-icons/fa";
-import resumePath from "./ShrihariDeshmukh_resume.pdf";
+import resumePath from "../assets/ShrihariDeshmukh_resume.pdf";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
