@@ -30,7 +30,7 @@ const Projects = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="object-cover w-full h-full rounded-lg shadow-lg"
+                    className="object-contain w-full h-full rounded-lg shadow-lg"
                   />
                 </motion.div>
                 <motion.div
@@ -56,46 +56,54 @@ const Projects = () => {
                     })}
                   </div>
                   <div className="flex space-x-4">
-                    <a
-                      href={project.liveDemo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative inline-block text-lg group"
-                    >
-                      <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-white transition-colors duration-300 ease-out bg-blue-600 rounded-lg group-hover:bg-blue-700">
-                        <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gradient-to-br from-purple-400 to-blue-600"></span>
-                        <span className="relative cursor-pointer">
-                          Live Demo
+                    {project.liveDemo ? (
+                      <a
+                        href={project.liveDemo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative inline-block text-lg group"
+                      >
+                        <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-white transition-colors duration-300 ease-out bg-blue-600 rounded-lg group-hover:bg-blue-700">
+                          <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gradient-to-br from-purple-400 to-blue-600"></span>
+                          <span className="relative cursor-pointer">
+                            Live Demo
+                          </span>
+                        </span>
+                      </a>
+                    ) : (
+                      <span className="relative inline-block text-lg group">
+                        <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-white transition-colors duration-300 ease-out bg-gray-600 rounded-lg">
+                          <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gradient-to-br from-gray-500 to-gray-700"></span>
+                          <span className="relative cursor-default">
+                            No Redirection for security reasons
+                          </span>
                         </span>
                       </span>
-                      <span
-                        className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gradient-to-br from-purple-400 to-blue-600"
-                        style={{
-                          filter: "blur(10px)",
-                          transform: "translate(0, 0)",
-                          transition: "opacity 0.3s ease-in-out",
-                        }}
-                      ></span>
-                    </a>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative inline-block text-lg group"
-                    >
-                      <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-white transition-colors duration-300 ease-out bg-gray-700 rounded-lg group-hover:bg-gray-800">
-                        <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gradient-to-br from-purple-400 to-blue-600"></span>
-                        <span className="relative cursor-pointer">GitHub</span>
+                    )}
+                    {project.github ? (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative inline-block text-lg group"
+                      >
+                        <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-white transition-colors duration-300 ease-out bg-gray-700 rounded-lg group-hover:bg-gray-800">
+                          <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gradient-to-br from-purple-400 to-blue-600"></span>
+                          <span className="relative cursor-pointer">
+                            GitHub
+                          </span>
+                        </span>
+                      </a>
+                    ) : (
+                      <span className="relative inline-block text-lg group">
+                        <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-white transition-colors duration-300 ease-out rounded-lg">
+                          <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gradient-to-br"></span>
+                          <span className="relative cursor-default">
+                            Closed Source
+                          </span>
+                        </span>
                       </span>
-                      <span
-                        className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gradient-to-br from-purple-400 to-blue-600"
-                        style={{
-                          filter: "blur(10px)",
-                          transform: "translate(0, 0)",
-                          transition: "opacity 0.3s ease-in-out",
-                        }}
-                      ></span>
-                    </a>
+                    )}
                   </div>
                 </motion.div>
               </div>
