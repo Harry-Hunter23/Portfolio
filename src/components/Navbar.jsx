@@ -1,4 +1,3 @@
-import React from "react";
 import { FaLinkedinIn, FaGithub, FaWhatsapp, FaTelegram } from "react-icons/fa";
 import resumePath from "../assets/Shrihari__resume.pdf";
 import { motion } from "framer-motion";
