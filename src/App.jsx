@@ -8,6 +8,7 @@ import Projects from "./components/Projects";
 import Contacts from "./components/Contacts";
 import BackgroundAnimation from "./components/BackgroundAnimation";
 import LoadingScreen from "./components/LoadingScreen";
+import FAQ from "./components/FAQ";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -26,6 +27,7 @@ const App = () => {
             <Tech />
             <Tools />
             <Projects />
+            <FAQ />
             <Contacts />
           </div>
         </div>
