@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -88,14 +89,54 @@ const FAQ = () => {
       {/* 🔥 Rickroll Button at the Bottom */}
       <div className="mt-8 flex justify-center">
         <button
-          onClick={() =>
-            window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank")
-          }
-          className="bg-red-600 hover:bg-red-900 text-white hover:text-black px-4 py-2 rounded-lg transition-all duration-300"
+          onClick={() => setIsModalOpen(true)}
+          className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-all duration-300"
         >
-          Don't Click Me Please😭😭🙏
+          Don't Click Me Please😭😭🙏🙏
         </button>
       </div>
+
+      {/* 😈 Modal for Double Trolling */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center"
+          onClick={() => setIsModalOpen(false)} // Close modal when clicking outside
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+            className="bg-gray-900 p-6 rounded-lg shadow-lg text-center max-w-sm relative"
+            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+          >
+            <h2 className="text-white text-2xl font-bold mb-4">
+              I Dare You Not to Click Here
+            </h2>
+            <p className="text-gray-300 mb-6">
+              This button will do nothing... trust me 😏
+            </p>
+            <div className="flex justify-center gap-4">
+              <button
+                onClick={() =>
+                  window.open(
+                    "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                    "_blank"
+                  )
+                }
+                className="bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-all duration-300"
+              >
+                Fine, I'll Click
+              </button>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="bg-gray-600 hover:bg-gray-800 text-white px-4 py-2 rounded-lg transition-all duration-300"
+              >
+                I Don't Want to Click
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 };
