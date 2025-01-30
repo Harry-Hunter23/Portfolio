@@ -84,6 +84,18 @@ const FAQ = () => {
           </li>
         ))}
       </ul>
+
+      {/* 🔥 Rickroll Button at the Bottom */}
+      <div className="mt-8 flex justify-center">
+        <button
+          onClick={() =>
+            window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank")
+          }
+          className="bg-red-600 hover:bg-red-900 text-white hover:text-black px-4 py-2 rounded-lg transition-all duration-300"
+        >
+          Don't Click Me Please😭😭🙏
+        </button>
+      </div>
     </div>
   );
 };
