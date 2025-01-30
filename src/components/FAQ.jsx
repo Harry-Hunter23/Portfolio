@@ -123,7 +123,7 @@ const FAQ = () => {
                 }
                 className="bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-all duration-300"
               >
-                Fine, I'll Click
+                I want to Click
               </button>
               <button
                 onClick={() => setIsModalOpen(false)}
