@@ -113,13 +113,13 @@ const FAQ = () => {
               I Dare You Not to Click Here
             </h2>
             <p className="text-gray-300 mb-6">
-              This button will do nothing... trust me 😏
+              This button will do nothing... trust me 👶
             </p>
             <div className="flex justify-center gap-4">
               <button
                 onClick={() =>
                   window.open(
-                    "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                    "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0",
                     "_blank"
                   )
                 }
