@@ -125,12 +125,6 @@ const FAQ = () => {
               >
                 I want to Click
               </button>
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="bg-gray-600 hover:bg-gray-800 text-white px-4 py-2 rounded-lg transition-all duration-300"
-              >
-                I Don't Want to Click
-              </button>
             </div>
           </motion.div>
         </div>
