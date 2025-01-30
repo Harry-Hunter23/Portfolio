@@ -100,6 +100,33 @@ const FAQ = () => {
       answer:
         "Oh, it doesn't! Unless debugging code is somehow related to actual bugs in the field. Honestly, I was never interested in agriculture—I just happened to study it. But hey, if I can grow crops, I can definitely grow a startup! At least in tech, my code doesn’t depend on the weather (most of the time).",
     },
+    {
+      question: "What excites you the most about technology?",
+      answer:
+        "The ability to create something from scratch that can impact millions of people. AI, blockchain, and automation are reshaping industries, and I love being part of that transformation.",
+    },
+    {
+      question:
+        "How do you balance your interest in startups and tech development?",
+      answer:
+        "I follow a structured learning approach while staying updated on market trends. I spend time coding, researching business strategies, and engaging with startup communities to stay well-rounded.",
+    },
+    {
+      question: "What technologies are you currently focused on?",
+      answer:
+        "I’m primarily focused on JavaScript, React, AI tools, and blockchain development. These technologies align well with my interests in AI, automation, and decentralized applications.",
+    },
+    {
+      question: "How do you see AI shaping the future of startups?",
+      answer:
+        "AI is making businesses more efficient by automating processes, improving decision-making, and enabling personalized user experiences. Startups leveraging AI have a competitive edge in today's market.",
+    },
+    {
+      question:
+        "What advice would you give to someone from a non-tech background looking to get into software?",
+      answer:
+        "Start with problem-solving and logic-building. Learn one language deeply, work on real projects, and engage in communities that align with your interests. Passion and consistency matter more than a formal CS degree.",
+    },
   ];
 
   return (
