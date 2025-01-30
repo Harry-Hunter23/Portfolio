@@ -48,8 +48,7 @@ export const PROJECTS = [
   {
     title: "Snapit",
     image: snapit,
-    description:
-      "AI reminder application for the documents exclusively made for middle-east countries(details mentioned in CV)",
+    description: "Document management system(details mentioned in CV)",
     technologies: [
       "HTML",
       "CSS",
