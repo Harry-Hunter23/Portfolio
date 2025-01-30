@@ -1,147 +1,92 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
-import { AiOutlineEye, AiOutlineClose } from "react-icons/ai";
+import { AiOutlineEye } from "react-icons/ai";
 
-const Projects = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+// ✅ Memoized ProjectCard Component to prevent unnecessary re-renders
+const ProjectCard = memo(({ project, index }) => (
+  <motion.div
+    whileHover={{ scale: 1.05 }}
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.4, delay: index * 0.1 }}
+    viewport={{ once: true }} // ✅ Loads animation only once
+    className="relative group overflow-hidden rounded-2xl shadow-lg bg-neutral-900 cursor-pointer"
+  >
+    {/* 🖼️ Optimized Lazy-Loaded Image */}
+    <img
+      src={project.image}
+      alt={project.title}
+      loading="lazy" // ✅ Improves Performance
+      className="object-cover w-full h-60 transition-transform duration-300 group-hover:scale-110"
+    />
 
-  return (
-    <>
-      <div className="border-b border-neutral-900 pb-4">
-        <motion.h2
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: -100 }}
-          transition={{ duration: 0.5 }}
-          className="my-20 text-4xl text-center"
-        >
-          Projects
-        </motion.h2>
-        <div className="flex flex-wrap justify-center">
-          {PROJECTS.map((project, index) => (
-            <div
-              key={index}
-              className="mb-8 flex flex-col items-center lg:flex-row lg:justify-start lg:w-2/3"
-            >
-              <motion.div
-                whileInView={{ opacity: 1, x: 0 }}
-                initial={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.5 }}
-                className="relative aspect-w-1 aspect-h-1 mb-6 w-full max-w-xs lg:mr-8"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="object-contain w-full h-full rounded-lg shadow-lg cursor-pointer"
-                  onClick={() => setSelectedImage(project.image)}
-                />
-                {/* Preview Icon - Opens Image in New Tab */}
-                <div
-                  className="absolute bottom-2 right-2 bg-black bg-opacity-50 p-2 rounded-full cursor-pointer"
-                  onClick={(e) => {
-                    e.stopPropagation(); // Prevent opening modal
-                    window.open(project.image, "_blank");
-                  }}
-                >
-                  <AiOutlineEye className="text-white text-2xl" />
-                </div>
-              </motion.div>
-              <motion.div
-                whileInView={{ opacity: 1, x: 0 }}
-                initial={{ opacity: 0, x: 100 }}
-                transition={{ duration: 0.5 }}
-                className="w-full max-w-xl lg:w-auto"
-              >
-                <h6 className="mb-2 text-xl font-semibold text-gray-200">
-                  {project.title}
-                </h6>
-                <p className="mb-4 text-neutral-400">{project.description}</p>
-                <div className="mb-4">
-                  {project.technologies.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="mr-2 mb-2 inline-block rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-900"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex space-x-4">
-                  {project.liveDemo ? (
-                    <a
-                      href={project.liveDemo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative inline-block text-lg group"
-                    >
-                      <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-white transition-colors duration-300 ease-out bg-blue-600 rounded-lg group-hover:bg-blue-700">
-                        Live Demo
-                      </span>
-                    </a>
-                  ) : (
-                    <span className="relative inline-block text-lg group">
-                      <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-white transition-colors duration-300 ease-out bg-gray-600 rounded-lg">
-                        No Redirection for security reasons
-                      </span>
-                    </span>
-                  )}
-                  {project.github ? (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative inline-block text-lg group"
-                    >
-                      <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-white transition-colors duration-300 ease-out bg-gray-700 rounded-lg group-hover:bg-gray-800">
-                        GitHub
-                      </span>
-                    </a>
-                  ) : (
-                    <span className="relative inline-block text-lg group">
-                      <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-white transition-colors duration-300 ease-out rounded-lg">
-                        Closed Source
-                      </span>
-                    </span>
-                  )}
-                </div>
-              </motion.div>
-            </div>
-          ))}
-        </div>
+    {/* 🔥 Overlay with Info */}
+    <div className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-md flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+      <p className="text-sm text-gray-300 px-4 text-center">
+        {project.description}
+      </p>
+
+      {/* 🛠️ Technologies */}
+      <div className="mt-3 flex flex-wrap justify-center">
+        {project.technologies.map((tech, i) => (
+          <span
+            key={i}
+            className="text-xs bg-purple-700 bg-opacity-20 text-white px-3 py-1 rounded-lg mx-1"
+          >
+            {tech}
+          </span>
+        ))}
       </div>
 
-      {/* Image Preview Modal */}
-      {selectedImage && (
-        <motion.div
-          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={() => setSelectedImage(null)}
-        >
-          <motion.div
-            className="relative p-4 max-w-3xl w-full"
-            initial={{ scale: 0.8 }}
-            animate={{ scale: 1 }}
-            exit={{ scale: 0.8 }}
+      {/* 🔗 Links */}
+      <div className="mt-4 flex space-x-4">
+        {project.liveDemo && (
+          <a
+            href={project.liveDemo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition"
           >
-            <img
-              src={selectedImage}
-              alt="Preview"
-              className="w-full h-auto rounded-lg shadow-lg"
-              onClick={(e) => e.stopPropagation()}
-            />
-            {/* Close Button */}
-            <button
-              className="absolute top-4 right-4 text-white bg-black bg-opacity-50 p-2 rounded-full"
-              onClick={() => setSelectedImage(null)}
-            >
-              <AiOutlineClose className="text-2xl" />
-            </button>
-          </motion.div>
-        </motion.div>
-      )}
-    </>
+            Live Demo
+          </a>
+        )}
+        {project.github && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white text-sm font-medium rounded-lg transition"
+          >
+            GitHub
+          </a>
+        )}
+      </div>
+    </div>
+  </motion.div>
+));
+
+const Projects = () => {
+  return (
+    <div className="border-b border-neutral-900 pb-20">
+      <motion.h2
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: -50 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }} // ✅ Prevents re-rendering animations
+        className="my-20 text-5xl font-bold text-center tracking-wide"
+      >
+        My Projects
+      </motion.h2>
+
+      {/* 🔥 Responsive Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
+        {PROJECTS.map((project, index) => (
+          <ProjectCard key={index} project={project} index={index} />
+        ))}
+      </div>
+    </div>
   );
 };
 
