@@ -112,9 +112,7 @@ const FAQ = () => {
             <h2 className="text-white text-2xl font-bold mb-4">
               I Dare You Not to Click Here
             </h2>
-            <p className="text-gray-300 mb-6">
-              This button will do nothing... trust me 👶
-            </p>
+            <p className="text-gray-300 mb-6">Don't click Please😭😭🙏🙏</p>
             <div className="flex justify-center gap-4">
               <button
                 onClick={() =>
