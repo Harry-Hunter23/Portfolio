@@ -68,7 +68,7 @@ const FAQ = () => {
       "You😁",
       "Ready😜",
       "For👌",
-      "This?🤘🤘",
+      "This?👊",
     ];
 
     const countdownInterval = setInterval(() => {
