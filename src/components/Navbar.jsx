@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="max-w-[1200px] mx-auto my-5 flex flex-col md:flex-row items-center justify-between px-4 md:px-0">
+      <nav className=" mx-auto my-5 flex flex-col md:flex-row items-center justify-between px-4 md:px-0 max-w-[1360px]">
         <motion.div
           className="flex items-center justify-center w-[65px] h-[65px] bg-gradient-to-r from-purple-400 to-blue-600 text-white font-bold text-2xl rounded-full my-2 mx-3"
           whileHover={{ scale: 1.1 }}
