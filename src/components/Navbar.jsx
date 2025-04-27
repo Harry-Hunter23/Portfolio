@@ -1,12 +1,12 @@
 import { FaLinkedinIn, FaGithub, FaWhatsapp, FaTelegram } from "react-icons/fa";
-import resumePath from "../assets/Shrihari__resume.pdf";
+import resumePath from "../assets/Shrihari_Deshmukh_Resume.pdf";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = resumePath;
-    link.download = "Shrihari_Resume.pdf";
+    link.download = "Shrihari_Deshmukh_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
