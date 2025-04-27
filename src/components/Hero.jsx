@@ -14,13 +14,13 @@ const Hero = () => {
   });
 
   return (
-    <div className="pb-4 lg:mb-35 flex flex-col lg:flex-row items-center lg:items-start gap-5 lg:gap-10">
+    <div className="pb-4 lg:mb-35 flex flex-col lg:flex-row items-center lg:items-start gap-5 lg:gap-10 justify-center">
       <div className="flex flex-col items-center lg:items-start text-center lg:text-left mx-4 sm:mx-6 lg:mx-0">
         <motion.h1
           variants={container(0)}
           initial="hidden"
           animate="visible"
-          className="text-4xl sm:text-5xl lg:text-6xl font-thin tracking-tight my-6 lg:my-[50px] p-4 lg:p-6 text-white"
+          className="text-4xl sm:text-5xl lg:text-6xl font-thin tracking-tight my-6 lg:my-[50px] py-4 lg:py-6 text-white"
         >
           Shrihari Deshmukh
         </motion.h1>

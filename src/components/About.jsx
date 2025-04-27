@@ -10,8 +10,8 @@ const About = () => {
       <h1 className="my-10 sm:my-16 lg:my-20 text-center text-3xl sm:text-4xl">
         About<span className="text-neutral-500 ml-2 sm:ml-3">Me</span>
       </h1>
-      <div className="flex flex-wrap lg:flex-nowrap">
-        <div className="group w-full lg:w-1/2 lg:p-8 flex justify-center lg:justify-end">
+      <div className="flex flex-wrap lg:flex-nowrap justify-center">
+        <div className="group w-full lg:w-1/2 lg:p-8 flex justify-center lg:justify-center">
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}

@@ -15,7 +15,7 @@ export const PROJECTS = [
     title: "BlabberBot",
     image: project1,
     description:
-      "The User is able to use four functionalities: Text Summarization, Paragraph Generation, Chatbot, and Sci-Fi Image Creation",
+      "Bot for Text Summarization, Paragraph Generation, Chatbot, and Sci-Fi Image Creation",
     technologies: [
       "HTML",
       "CSS",
@@ -48,8 +48,7 @@ export const PROJECTS = [
   {
     title: "Snapit",
     image: snapit,
-    description:
-      "AI reminder application for the documents exclusively made for middle-east countries(details mentioned in CV)",
+    description: "Document management system(details mentioned in CV)",
     technologies: [
       "HTML",
       "CSS",
